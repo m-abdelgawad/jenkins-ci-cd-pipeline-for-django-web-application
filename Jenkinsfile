@@ -118,6 +118,7 @@ pipeline {
                                 7z x -o./ -aoa -p${ENV_PASSWORD} ./env.7z
                                 docker-compose -f pipeline-docker-compose.yml up --build -d
 
+                                # Remove old images
                                 docker image prune -af
 EOF
                         """
